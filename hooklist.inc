@@ -95,8 +95,10 @@ function get_hooklist_items() {
  
   foreach ($items as &$item) {
     // Set id by replacing '_' with '-' and removing the '()' in hook_name 
-    $item['id'] = str_replace('_', '-',
-        str_replace(array('(', ')'), '', $item['data']['#hook_name'])
+    $item['id'] = str_replace(
+      array('_', '(', ')'), 
+      array('-', '', ''), 
+      $item['data']['#hook_name']
     );
     
     // Add css class

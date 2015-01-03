@@ -24,11 +24,11 @@ function get_hooklist_items() {
       '#category' => 'System',
       '#tags_array' => array('data' => array()),
       '#sample_code' => check_plain(
-        'function first_help($path, $arg) {' . "\n" .
-        '  if ($path == \'admin/help#first\') {' . "\n" . 
-        '    return t(\'A demonstration module.\');' . "\n" .
-        '  }' . "\n" .
-        '}'
+        "function first_help(\$path, \$arg) { \n" .
+        "  if (\$path == 'admin/help#first') { \n" . 
+        "    return t('A demonstration module.'); \n" .
+        "  } \n" .
+        "}"
       ),
     ),
     'class' => array('hook'),
@@ -43,14 +43,14 @@ function get_hooklist_items() {
       '#category' => 'Block',
       '#tags_array' => array('data' => array('required')),
       '#sample_code' => check_plain(
-        'function first_block_info() {' . "\n" .
-        '  $blocks = array();' . "\n\n" .
-        '  $blocks[\'list_modules\'] = array(' . "\n" .
-        '    \'info\' => t(\'A listing of all of the enabled modules.\'),' . "\n" .
-        '    \'cache\' => DRUPAL_NO_CACHE,' . "\n" .
-        '  );' . "\n\n" .
-        '  return $blocks;' . "\n" .
-        '}'
+        "function first_block_info() { \n" .
+        "  \$blocks = array(); \n\n" .
+        "  \$blocks['list_modules'] = array( \n" .
+        "    'info' => t('A listing of all of the enabled modules.'), \n" .
+        "    'cache' => DRUPAL_NO_CACHE, \n" .
+        "  ); \n\n" .
+        "  return \$blocks; \n" .
+        "}"
       ),
     ),
     'class' => array('hook'),
@@ -65,18 +65,18 @@ function get_hooklist_items() {
       '#category' => 'Block',
       '#tags_array' => array('data' => array('required')),
       '#sample_code' => check_plain(
-        'function first_block_view($block_name = \'\') {' . "\n" .
-        '  if ($block_name == \'list_modules\') {' . "\n" .
-        '    $list = module_list();' . "\n\n" .
-        '    $theme_args = array(\'items\' => $list, \'type\' => \'ol\');' . "\n" .
-        '    $content = theme(\'item_list\', $theme_args);' . "\n\n" .
-        '    $block = array(' . "\n" .
-        '     \'subject\' => t(\'Enabled Modules\'),' . "\n" .
-        '     \'content\' => $content,' . "\n" .
-        '    );' . "\n\n" .
-        '    return $block;' . "\n" .
-        '  }' . "\n" .
-        '}'
+        "function first_block_view(\$block_name = '') { \n" .
+        "  if (\$block_name == 'list_modules') { \n" .
+        "    \$list = module_list(); \n\n" .
+        "    \$theme_args = array('items' => \$list, 'type' => 'ol'); \n" .
+        "    \$content = theme('item_list', \$theme_args); \n\n" .
+        "    \$block = array( \n" .
+        "      'subject' => t('Enabled Modules'), \n" .
+        "      'content\' => \$content, \n" .
+        "    ); \n\n" .
+        "    return \$block; \n" .
+        "  } \n" .
+        "}"
        ),
      ),
     'class' => array('hook'),

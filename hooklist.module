@@ -66,7 +66,6 @@ function hooklist_block_view($block_name = '') {
       $block['content']['#attached']['css'][] = 
         drupal_get_path('module', 'hooklist') . '/highlight.default.css';
       
-      
       // Add a CSS file to style the block.
       $block['content']['#attached']['css'][] = 
         drupal_get_path('module', 'hooklist') . '/hooklist.css';
@@ -75,11 +74,9 @@ function hooklist_block_view($block_name = '') {
       $block['content']['#attached']['js'][] = 
         drupal_get_path('module', 'hooklist') . '/highlight.pack.js';
       
-      // Add a JS file to toggle sample code.
+      // Add a JS file to handle client side script.
       $block['content']['#attached']['js'][] = 
         drupal_get_path('module', 'hooklist') . '/hooklist.js';
-      
-
   }
   
   return $block;
@@ -153,6 +150,7 @@ function template_preprocess_hooklist_block_item(&$variables) {
  */
 function get_renderable_tags_array($tags_array, $is_filter = FALSE) {
   $items = array();
+  
   foreach ($tags_array as $tag) {
     $item = array(
       'data' => $tag,

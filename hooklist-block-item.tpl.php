@@ -25,7 +25,7 @@
  * - $hook_name: The hook function name.
  * - $url: The url to the official Drupal documentation for the hook.
  *
- * @see template_preprocess_hooklisst_block_item()
+ * @see template_preprocess_hooklist_block_item()
  */
 ?>
 <div class="<?php print $classes; ?>">

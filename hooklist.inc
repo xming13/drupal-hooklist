@@ -21,6 +21,7 @@ function get_hooklist_items() {
       '#hook_name' => 'hook_help()',
       '#url' => 'https://api.drupal.org/api/drupal/modules/system/system.api.php/function/hook_help/7',
       '#description' => 'Provides online user help.',
+      '#tips' => array('Return a string in t().'),
       '#category' => 'System',
       '#tags_array' => array('optional', 'info'),
       '#sample_code' => 
@@ -30,7 +31,6 @@ function get_hooklist_items() {
         "  } \n" .
         "}",
     ),
-    'class' => array('hook'),
   );
   
   $items[] = array(
@@ -38,7 +38,8 @@ function get_hooklist_items() {
       '#theme' => 'hooklist_block_item',
       '#hook_name' => 'hook_block_info()',
       '#url' => 'https://api.drupal.org/api/drupal/modules/block/block.api.php/function/hook_block_info/7',
-      '#description' => 'Define all blocks provided by the module.',
+      '#description' => 'Defines all blocks provided by the module.',
+      '#tips' => array(''),
       '#category' => 'Block',
       '#tags_array' => array('required'),
       '#sample_code' => 
@@ -51,7 +52,6 @@ function get_hooklist_items() {
         "  return \$blocks; \n" .
         "}",
     ),
-    'class' => array('hook'),
   );
   
   $items[] = array(
@@ -59,7 +59,8 @@ function get_hooklist_items() {
       '#theme' => 'hooklist_block_item',
       '#hook_name' => 'hook_block_view()',
       '#url' => 'https://api.drupal.org/api/drupal/modules/block/block.api.php/function/hook_block_view/7',
-      '#description' => 'Return a rendered or renderable view of a block.',
+      '#description' => 'Returns a rendered or renderable view of a block.',
+      '#tips' => array('Returns an array with key \'subject\' and \'content\''),
       '#category' => 'Block',
       '#tags_array' => array('required'),
       '#sample_code' => 
@@ -76,11 +77,19 @@ function get_hooklist_items() {
         "  } \n" .
         "}",
      ),
-    'class' => array('hook'),
   );
   
-  // append css class hook-[tag] to the item
+ 
   foreach ($items as &$item) {
+    // Set id by replacing '_' with '-' and removing the '()' in hook_name 
+    $item['id'] = str_replace('_', '-',
+        str_replace(array('(', ')'), '', $item['data']['#hook_name'])
+    );
+    
+    // Add css class
+    $item['class'] = array('hook');
+    
+    // Append css class hook-[tag] to the item
     foreach ($item['data']['#tags_array'] as $key => $value) {
       array_push($item['class'], 'hook-' . $value);
     }

@@ -13,9 +13,10 @@
  *   official documentation for the hook.
  * - $description: The description of the hook.
  * - $category: The category of the hook.
- * - $sample_code: The sample code to implement the hook.
- * - $tags_array: Array of tags html.
+ * - $sample_code: The sample code to demonstrate how to implement the hook.
+ * - $tags: A renderable array of item_list
  * 
+ * - $tags_array: Array of tag names associated with the hook.
  * - $classes_array: Array of html class attribute values. It is flattened
  *   into a string within the variable $classes.
  *

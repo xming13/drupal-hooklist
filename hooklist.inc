@@ -22,7 +22,7 @@ function get_hooklist_items() {
       '#url' => 'https://api.drupal.org/api/drupal/modules/system/system.api.php/function/hook_help/7',
       '#description' => 'Provides online user help.',
       '#category' => 'System',
-      '#tags_array' => array('data' => array()),
+      '#tags_array' => array('optional', 'info'),
       '#sample_code' => check_plain(
         "function first_help(\$path, \$arg) { \n" .
         "  if (\$path == 'admin/help#first') { \n" . 
@@ -41,7 +41,7 @@ function get_hooklist_items() {
       '#url' => 'https://api.drupal.org/api/drupal/modules/block/block.api.php/function/hook_block_info/7',
       '#description' => 'Define all blocks provided by the module.',
       '#category' => 'Block',
-      '#tags_array' => array('data' => array('required')),
+      '#tags_array' => array('required'),
       '#sample_code' => check_plain(
         "function first_block_info() { \n" .
         "  \$blocks = array(); \n\n" .
@@ -63,7 +63,7 @@ function get_hooklist_items() {
       '#url' => 'https://api.drupal.org/api/drupal/modules/block/block.api.php/function/hook_block_view/7',
       '#description' => 'Return a rendered or renderable view of a block.',
       '#category' => 'Block',
-      '#tags_array' => array('data' => array('required')),
+      '#tags_array' => array('required'),
       '#sample_code' => check_plain(
         "function first_block_view(\$block_name = '') { \n" .
         "  if (\$block_name == 'list_modules') { \n" .

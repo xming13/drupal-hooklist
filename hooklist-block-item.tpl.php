@@ -12,10 +12,12 @@
  * - $link: A renderable array that provides a title and link to the drupal 
  *   official documentation for the hook.
  * - $description: The description of the hook.
+ * - $tips: Some tips for developers who are going to implement the hook.
  * - $category: The category of the hook.
  * - $sample_code: The sample code to demonstrate how to implement the hook.
  * - $tags: A renderable array of item_list
  * 
+ * - $tips_array: Array of tips related to the implementation of hook.
  * - $tags_array: Array of tag names associated with the hook.
  * - $classes_array: Array of html class attribute values. It is flattened
  *   into a string within the variable $classes.
@@ -42,8 +44,15 @@
     <?php print $description; ?><span class="toggle">+</span>
   </div>
   
+  <?php if (count($tips_array) > 0) {?>
+  <div class="tips">
+    <div class="tips-label">Tips:</div>
+    <?php print render($tips); ?>
+  </div>
+  <?php }?>
+  
   <div class="sample-code">
-    <span class="sample-code-label">Sample Code:</span>
+    <div class="sample-code-label">Sample Code:</div>
     <pre><code class="php"><?php print $sample_code; ?></code></pre>
   </div>
   

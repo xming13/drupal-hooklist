@@ -107,6 +107,7 @@ function hooklist_theme($existing, $type, $theme, $path) {
         'hook_name' => '',
         'url' => '',
         'description' => '',
+        'tips_array' => '',
         'category' => '',
         'tags_array' => array(),
         'sample_code' => '',
@@ -138,6 +139,12 @@ function template_preprocess_hooklist_block_item(&$variables) {
     ),
   );
   
+  // Set renderable array for the tips
+  $variables['tips'] = array(
+    '#theme' => 'item_list',
+    '#items' => $variables['tips_array'],
+  );
+          
   // Set renderable array for the tags
   $variables['tags'] = get_renderable_tags_array($variables['tags_array']);
 }

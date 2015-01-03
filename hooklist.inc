@@ -21,7 +21,15 @@ function get_hooklist_items() {
       '#hook_name' => 'hook_help()',
       '#url' => 'https://api.drupal.org/api/drupal/modules/system/system.api.php/function/hook_help/7',
       '#description' => 'Provides online user help.',
-      '#tips' => array('Return a string in t().'),
+      '#tips_array' => array(
+        'Provides help text for the module by checking if the <em>$path</em> '
+        . 'is equal to \'admin\help<em>#MODULE_NAME</em>\', '
+        . 'where <em>#MODULE_NAME</em> is the '
+        . 'machine-readable name of the module.', 
+        'This function should return a string wrapped in '
+        . '<a href="https://api.drupal.org/api/drupal/includes/bootstrap.inc/function/t/7" target="_blank">t()</a> '
+        . 'for translation.',
+      ),
       '#category' => 'System',
       '#tags_array' => array('optional', 'info'),
       '#sample_code' => 
@@ -39,7 +47,7 @@ function get_hooklist_items() {
       '#hook_name' => 'hook_block_info()',
       '#url' => 'https://api.drupal.org/api/drupal/modules/block/block.api.php/function/hook_block_info/7',
       '#description' => 'Defines all blocks provided by the module.',
-      '#tips' => array(''),
+      '#tips_array' => array(),
       '#category' => 'Block',
       '#tags_array' => array('required'),
       '#sample_code' => 
@@ -60,7 +68,12 @@ function get_hooklist_items() {
       '#hook_name' => 'hook_block_view()',
       '#url' => 'https://api.drupal.org/api/drupal/modules/block/block.api.php/function/hook_block_view/7',
       '#description' => 'Returns a rendered or renderable view of a block.',
-      '#tips' => array('Returns an array with key \'subject\' and \'content\''),
+      '#tips_array' => array(
+        'Check <em>$block_name</em> with the keys defined '
+        . 'in the returned array in '
+        . '<a href="#hook-block-info">hook_block_info()</a>.',
+        'This function should return an array with key \'subject\' and \'content\'.',
+        ),
       '#category' => 'Block',
       '#tags_array' => array('required'),
       '#sample_code' => 

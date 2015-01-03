@@ -7,14 +7,14 @@
         
         // toggle code sample
         $('.toggle').click(function() {
-            var sample = this.parentNode.nextElementSibling;
+            var $sample = $(this).parent().siblings('.tips, .sample-code');
 
-            if (sample) {
+            if ($sample) {
                 if (this.innerHTML === '+') {
-                    $(sample).fadeIn('fast');
+                    $sample.fadeIn('fast');
                     this.innerHTML = '-';
                 } else {
-                    $(sample).fadeOut('fast');
+                    $sample.fadeOut('fast');
                     this.innerHTML = '+';
                 }
             }

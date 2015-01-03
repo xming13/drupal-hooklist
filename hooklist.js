@@ -2,6 +2,9 @@
     var $ = jQuery;
 
     $(document).ready(function() {
+        // highlight.js - init
+        hljs.initHighlightingOnLoad();
+        
         // toggle code sample
         $('.toggle').click(function() {
             var sample = this.parentNode.nextElementSibling;

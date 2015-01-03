@@ -72,7 +72,7 @@ function get_hooklist_items() {
         "    \$content = theme('item_list', \$theme_args); \n\n" .
         "    \$block = array( \n" .
         "      'subject' => t('Enabled Modules'), \n" .
-        "      'content\' => \$content, \n" .
+        "      'content' => \$content, \n" .
         "    ); \n\n" .
         "    return \$block; \n" .
         "  } \n" .

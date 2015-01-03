@@ -44,7 +44,7 @@
   
   <div class="sample-code">
     <span class="sample-code-label">Sample Code:</span>
-    <pre><code><?php print $sample_code; ?></code></pre>
+    <pre><code class="php"><?php print $sample_code; ?></code></pre>
   </div>
   
   <div class="tags">

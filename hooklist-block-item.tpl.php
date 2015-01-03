@@ -46,13 +46,13 @@
   
   <?php if (count($tips_array) > 0) {?>
   <div class="tips">
-    <div class="tips-label">Tips:</div>
+    <label>Tips:</label>
     <?php print render($tips); ?>
   </div>
   <?php }?>
   
   <div class="sample-code">
-    <div class="sample-code-label">Sample Code:</div>
+    <label>Sample Code:</label>
     <pre><code class="php"><?php print $sample_code; ?></code></pre>
   </div>
   

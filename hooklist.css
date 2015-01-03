@@ -38,19 +38,14 @@
     background-color: #FFFDE7;
 }
 
-.block-hooklist .tips-label {
+.block-hooklist .tips label {
     padding: 10px;
-    font-weight: bold;
-}
-
-.block-hooklist .tips .item-list {
-    background-color: rgba(40, 40, 0, 0.06);
-    overflow: hidden;
-    padding: 15px;
 }
 
 .block-hooklist .tips ul {
     margin: 0;
+    padding: 15px;
+    background-color: rgba(40, 40, 0, 0.06);
 }
 
 .block-hooklist .tips ul li {
@@ -78,9 +73,8 @@
     background-color: #EDE7F6;
 }
 
-.block-hooklist .sample-code-label {
+.block-hooklist .sample-code label {
     padding: 10px;
-    font-weight: bold;
 }
 
 .block-hooklist .sample-code pre {

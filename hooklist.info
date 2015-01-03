@@ -1,0 +1,7 @@
+name = Hook List
+description = Display a summary of commonly used hook list
+package = Drupal Development Utilities
+core = 7.x
+files[] = hooklist.inc
+files[] = hooklist.module
+files[] = hooklist.test

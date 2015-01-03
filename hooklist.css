@@ -1,0 +1,58 @@
+.block-hooklist .content ul {
+  padding-left: 0; /* LTR */
+}
+
+.block-hooklist .content ul li {
+  margin-bottom: 10px;
+  list-style-type: none;
+}
+
+.block-hooklist h2 {
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.block-hooklist .hooklist-block-item h2 {
+    float: left;
+    border: none;
+}
+
+.block-hooklist .category {
+    float: right;
+    margin: 25px 5px 2px 0;
+}
+
+.block-hooklist .category-name {
+    font-style: italic;
+}
+
+.block-hooklist .description {
+    padding: 10px;
+    background-color: aliceblue;
+    margin-top: 10px;
+}
+
+.block-hooklist .toggle {
+    float: right;
+    padding: 0 5px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 21px;
+    color: #6A1B9A;
+    cursor: pointer;
+}
+
+.block-hooklist .sample-code {
+    display: none;
+    margin-top: 10px;
+    background-color: #F3E5F5;
+}
+
+.block-hooklist .sample-code-label {
+    display: inline-block;
+    padding: 10px 0 0 10px;
+    font-weight: bold;
+}
+
+.clear {
+    clear: both;
+}

@@ -23,13 +23,12 @@ function get_hooklist_items() {
       '#description' => 'Provides online user help.',
       '#category' => 'System',
       '#tags_array' => array('optional', 'info'),
-      '#sample_code' => check_plain(
+      '#sample_code' => 
         "function first_help(\$path, \$arg) { \n" .
         "  if (\$path == 'admin/help#first') { \n" . 
         "    return t('A demonstration module.'); \n" .
         "  } \n" .
-        "}"
-      ),
+        "}",
     ),
     'class' => array('hook'),
   );
@@ -42,7 +41,7 @@ function get_hooklist_items() {
       '#description' => 'Define all blocks provided by the module.',
       '#category' => 'Block',
       '#tags_array' => array('required'),
-      '#sample_code' => check_plain(
+      '#sample_code' => 
         "function first_block_info() { \n" .
         "  \$blocks = array(); \n\n" .
         "  \$blocks['list_modules'] = array( \n" .
@@ -50,8 +49,7 @@ function get_hooklist_items() {
         "    'cache' => DRUPAL_NO_CACHE, \n" .
         "  ); \n\n" .
         "  return \$blocks; \n" .
-        "}"
-      ),
+        "}",
     ),
     'class' => array('hook'),
   );
@@ -64,7 +62,7 @@ function get_hooklist_items() {
       '#description' => 'Return a rendered or renderable view of a block.',
       '#category' => 'Block',
       '#tags_array' => array('required'),
-      '#sample_code' => check_plain(
+      '#sample_code' => 
         "function first_block_view(\$block_name = '') { \n" .
         "  if (\$block_name == 'list_modules') { \n" .
         "    \$list = module_list(); \n\n" .
@@ -76,8 +74,7 @@ function get_hooklist_items() {
         "    ); \n\n" .
         "    return \$block; \n" .
         "  } \n" .
-        "}"
-       ),
+        "}",
      ),
     'class' => array('hook'),
   );

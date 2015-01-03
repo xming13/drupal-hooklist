@@ -82,5 +82,12 @@ function get_hooklist_items() {
     'class' => array('hook'),
   );
   
+  // append css class hook-[tag] to the item
+  foreach ($items as &$item) {
+    foreach ($item['data']['#tags_array'] as $key => $value) {
+      array_push($item['class'], 'hook-' . $value);
+    }
+  }
+  
   return $items;
 }

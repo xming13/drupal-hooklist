@@ -37,7 +37,7 @@ function hooklist_block_info() {
 function hooklist_block_view($block_name = '') {
   module_load_include('inc', 'hooklist', 'hooklist');
   
-  $items = get_hooklist_items();
+  $hooklist_items = get_hooklist_items();
   
   // Create an empty block
   $block = array(
@@ -50,10 +50,15 @@ function hooklist_block_view($block_name = '') {
       // Set the block title.
       $block['subject'] = t('List of commonly used hooks');
       
+      // Theme the list of tags for selection.
+      $block['content']['tag-filter'] = get_renderable_tags_array(array(
+        'required', 'optional', 'info'
+      ), TRUE);
+      
       // Theme the list of hooks.
       $block['content']['list'] = array(
         '#theme' => 'item_list__hooklist',
-        '#items' => $items,
+        '#items' => $hooklist_items,
         '#pre_render' => array('hooklist_item_list_child_render'),
       );
       
@@ -125,19 +130,36 @@ function template_preprocess_hooklist_block_item(&$variables) {
     ),
   );
   
-  // Create a renderable array for the tags
+  // Set renderable array for the tags
+  $variables['tags'] = get_renderable_tags_array($variables['tags_array']);
+}
+
+/**
+ * Return a renderable array from the given tags array
+ * 
+ * @param array $tags_array an array of tag type (string)
+ * @param boolean $is_filter append the class 'filter' if TRUE
+ */
+function get_renderable_tags_array($tags_array, $is_filter = FALSE) {
   $items = array();
-  foreach ($variables['tags_array'] as $tag) {
-    $items[] = array(
+  foreach ($tags_array as $tag) {
+    $item = array(
       'data' => $tag,
       'class' => array(
         'tag', 
-        'tag-' . str_replace(' ', '-', strtolower($tag))
+        'tag-' . str_replace(' ', '-', strtolower($tag)),
+        'selected',
       ),
     );
+    
+    if ($is_filter) {
+      $item['class'][] = 'filter';
+    }
+    
+    $items[] = $item;
   }
   
-  $variables['tags'] = array(
+  return array(
     '#theme' => 'item_list', 
     '#items' => $items,
   ); 

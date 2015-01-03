@@ -58,20 +58,24 @@
     padding: 4px 8px;
     border-radius: 8px;
     box-shadow: inset 0 -1px 0 rgba(0,0,0,0.12);
+    background: #DDD;
     color: white;
     font: 13px bold Helvetica, arial;
+}
+
+.block-hooklist .tag.filter {
     cursor: pointer;
 }
 
-.block-hooklist .tag-required {
+.block-hooklist .tag-required.selected {
     background: #D32F2F;
 }
 
-.block-hooklist .tag-optional {
+.block-hooklist .tag-optional.selected {
     background: #388E3C;
 }
 
-.block-hooklist .tag-info {
+.block-hooklist .tag-info.selected {
     background: #1976D2;
 }
 

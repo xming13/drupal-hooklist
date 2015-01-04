@@ -1,6 +1,4 @@
-(function() {
-    var $ = jQuery;
-
+(function($) {
     $(document).ready(function() {
         // highlight.js - init
         hljs.initHighlightingOnLoad();
@@ -79,4 +77,4 @@
             return result;
         }
     });
-})();
+})(jQuery);

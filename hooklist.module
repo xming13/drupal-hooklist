@@ -52,7 +52,7 @@ function hooklist_block_view($block_name = '') {
       
       // Theme the list of tags for selection.
       $block['content']['tag-filter'] = get_renderable_tags_array(array(
-        'required', 'optional', 'info'
+        'required', 'optional', 'info', 'debug'
       ), TRUE);
       
       // Theme the list of hooks.
